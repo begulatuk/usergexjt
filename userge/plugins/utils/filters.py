@@ -197,7 +197,7 @@ async def chat_filter(message: Message) -> None:
                     _LOG.info(_LOG_STR, l_name)
                     _LOG.info(_LOG_STR, input_text)
                     #_LOG.info(_LOG_STR, FILTERS_DATA)
-                    _LOG.info(_LOG_STR,, filter_text)    
+                    _LOG.info(_LOG_STR, filter_text)    
                     await asyncio.sleep(2)
                     reply = True
 
