@@ -12,7 +12,11 @@ import asyncio
 from typing import Dict
 
 from userge import userge, Message, filters, get_collection, logging
+
+
 _LOG = logging.getLogger(__name__)
+_LOG_STR = "<<<!  #####  %s  #####  !>>>"
+
 FILTERS_COLLECTION = get_collection("filters")
 CHANNEL = userge.getCLogger(__name__)
 
