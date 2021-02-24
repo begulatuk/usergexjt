@@ -170,8 +170,8 @@ async def add_filter(message: Message) -> None:
 @userge.on_filters(~filters.me & ~filters.edited & FILTERS_CHATS, group=1)
 async def chat_filter(message: Message) -> None:
     """ filter handler """
-    if not message.from_user:
-        return
+#    if not message.from_user:
+#        return
     try:
         for name in FILTERS_DATA[message.chat.id]:
             reply = False
