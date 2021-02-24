@@ -188,7 +188,8 @@ async def chat_filter(message: Message) -> None:
             elif message.text:
                 l_name = name.lower()
                 input_text = message.text.strip().lower()
-                filter_text = message.text
+                filter_text = ''.join(input_text.split())
+                
                 if (input_text == l_name
                         or input_text.startswith(f"{l_name} ")
                         or input_text.endswith(f" {l_name}")
