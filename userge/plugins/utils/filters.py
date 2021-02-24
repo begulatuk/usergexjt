@@ -11,8 +11,8 @@
 import asyncio
 from typing import Dict
 
-from userge import userge, Message, filters, get_collection
-
+from userge import userge, Message, filters, get_collection, logging
+_LOG = logging.getLogger(__name__)
 FILTERS_COLLECTION = get_collection("filters")
 CHANNEL = userge.getCLogger(__name__)
 
@@ -190,9 +190,10 @@ async def chat_filter(message: Message) -> None:
                         or input_text.endswith(f" {l_name}")
                         or f" {l_name} " in filter_text
                         or f" {l_name} " in input_text):
-                        
+                    _LOG.info(_LOG_STR, l_name, input_text)    
                     await asyncio.sleep(2)
                     reply = True
+
             if reply:
                 await CHANNEL.forward_stored(client=message.client,
                                              message_id=FILTERS_DATA[message.chat.id][name],
