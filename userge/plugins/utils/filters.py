@@ -194,7 +194,10 @@ async def chat_filter(message: Message) -> None:
                         or input_text.endswith(f" {l_name}")
                         or f" {l_name} " in filter_text
                         or f" {l_name} " in input_text):
-                    _LOG.info(l_name, input_text, FILTERS_DATA, filter_text)    
+                    _LOG.info(_LOG_STR, l_name)
+                    _LOG.info(_LOG_STR, input_text)
+                    #_LOG.info(_LOG_STR, FILTERS_DATA)
+                    _LOG.info(_LOG_STR,, filter_text)    
                     await asyncio.sleep(2)
                     reply = True
 
