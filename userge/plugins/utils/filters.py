@@ -188,7 +188,7 @@ async def chat_filter(message: Message) -> None:
                 if (input_text == l_name
                         or input_text.startswith(f"{l_name} ")
                         or input_text.endswith(f" {l_name}")
-                        or f" {l_name} " in filter_text)
+                        or f" {l_name} " in filter_text
                         or f" {l_name} " in input_text):
                         
                     await asyncio.sleep(2)
