@@ -174,7 +174,7 @@ async def chat_filter(message: Message) -> None:
         return
     try:
         for name in FILTERS_DATA[message.chat.id]:
-            reply = False
+            reply = True
             if name.startswith(':') and name.endswith(':'):
                 media_type = name.strip(':')
                 if getattr(message, media_type, None):
