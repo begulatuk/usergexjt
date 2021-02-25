@@ -191,12 +191,12 @@ async def chat_filter(message: Message) -> None:
                 input_text = message.text.strip().lower()
                 #filter_text = re.findall(r"\b" + l_name + r"\b", input_text)
                # regex=re.compile(r"\bis\b")
-                text_search = r"\b" + l_name + r"\b"
-                match_text = re.search(text_search, input_text)
+               # text_search = r"\b" + l_name + r"\b"
+                match_text = re.search(lname, input_text)
                 if (input_text == l_name
                         or input_text.startswith(f"{l_name} ")
                         or input_text.endswith(f" {l_name}")
-                        or match_text is not None
+                        #or match_text is not None
                         or f" {l_name} " in input_text):
                     _LOG.info(_LOG_STR, l_name)
                     _LOG.info(_LOG_STR, input_text)
@@ -204,7 +204,8 @@ async def chat_filter(message: Message) -> None:
                     #_LOG.info(_LOG_STR, filter_text)    
                     await asyncio.sleep(2)
                     reply = True
-                        
+                elif match_text is not None:
+                    reply = True
             if reply:
                 await CHANNEL.forward_stored(client=message.client,
                                              message_id=FILTERS_DATA[message.chat.id][name],
