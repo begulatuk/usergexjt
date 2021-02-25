@@ -191,8 +191,8 @@ async def chat_filter(message: Message) -> None:
                 input_text = message.text.strip().lower()
                 #filter_text = re.findall(r"\b" + l_name + r"\b", input_text)
                # regex=re.compile(r"\bis\b")
-               # text_search = r"\b" + l_name + r"\b"
-                match_text = re.search(lname, input_text)
+                text_search = r"\b" + l_name + r"\b"
+                match_text = re.search(r"\b" + l_name + r"\b", input_text)
                 if (input_text == l_name
                         or input_text.startswith(f"{l_name} ")
                         or input_text.endswith(f" {l_name}")
