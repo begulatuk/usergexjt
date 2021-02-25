@@ -188,7 +188,7 @@ async def chat_filter(message: Message) -> None:
             elif message.text:
                 l_name = name.lower()
                 input_text = message.text.strip().lower()
-                filter_text = ''.join(input_text.split())
+                filter_text = re.findall(r"\b" + l_name + r"\b", input_text)
                 
                 if (input_text == l_name
                         or input_text.startswith(f"{l_name} ")
@@ -201,7 +201,7 @@ async def chat_filter(message: Message) -> None:
                     _LOG.info(_LOG_STR, filter_text)    
                     await asyncio.sleep(2)
                     reply = True
-
+                         
             if reply:
                 await CHANNEL.forward_stored(client=message.client,
                                              message_id=FILTERS_DATA[message.chat.id][name],
