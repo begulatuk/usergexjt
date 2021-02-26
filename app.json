@@ -1,5 +1,6 @@
 {
     "name": "Userge",
+#    "stack": "container",
     "description": "telegram pluggable userbot",
     "logo": "https://imgur.com/download/Inyeb1S",
     "keywords": [
@@ -32,21 +33,11 @@
             "description": "get a Heroku API key from http://dashboard.heroku.com/account",
             "required": false}
     },
-    "addons": [],
-    "buildpacks": [
-        {"url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"},
-        {"url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab.git"},
-        {"url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"},
-        {"url": "https://github.com/rking32/heroku-buildpack-google-chrome"},
-        {"url": "https://github.com/rking32/heroku-buildpack-chromedriver"},
-        {"url": "https://github.com/chrismytton/heroku-buildpack-jq.git"},
-        {"url": "https://github.com/heroku/heroku-buildpack-apt.git"},
-        {"url": "heroku/python"}
-    ],
+    "stack": "container",
     "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "free"
-        }
+      "worker": {
+        "quantity": 1,
+        "size": "free"
+      }
     }
-}
+  }
