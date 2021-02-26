@@ -1,37 +1,38 @@
 {
-    "name": "Userge",
-    "description": "telegram pluggable userbot",
-    "logo": "https://imgur.com/download/Inyeb1S",
+    "name": "Telegram Leecher",
+    "description": "A Telegram Leecher based on Pyrogram",
     "keywords": [
-        "userge",
-        "telegram",
-        "pluggable",
-        "userbot"
+      "telegram",
+      "pyrogram",
+      "torrent",
+      "3",
+      "leecher"
     ],
-    "repository": "https://github.com/UsergeTeam/Userge",
-    "website": "https://github.com/Userge",
-    "success_url": "https://t.me/theUserge",
+    "website": "https://github.com/azamaulanaaa/botkaca",
+    "repository": "https://github.com/azamaulanaaa/botkaca",
     "env": {
-        "API_ID": {"description": "Get this value from https://my.telegram.org"},
-        "API_HASH": {"description": "Get this value from https://my.telegram.org"},
-        "DATABASE_URL": {"description": "Mongodb url from https://cloud.mongodb.com/"},
-        "LOG_CHANNEL_ID": {"description": "Telegram Log Channel ID"},
-        "HU_STRING_SESSION": {
-            "description": "[USER MODE] - Get this using `bash genStr`",
-            "required": false},
-        "BOT_TOKEN": {
-            "description": "[BOT MODE] - Get this from https://t.me/botfather",
-            "required": false},
-        "OWNER_ID": {
-            "description": "[BOT MODE] - Your user_id",
-            "required": false},
-        "HEROKU_APP_NAME": {
-            "description": "given app name to the heroku app",
-            "required": false},
-        "HEROKU_API_KEY": {
-            "description": "get a Heroku API key from http://dashboard.heroku.com/account",
-            "required": false}
+      "API_ID": {
+        "description": "get this value from https://my.telegram.org",
+        "value": ""
+      },
+      "API_HASH": {
+        "description": "get this value from https://my.telegram.org",
+        "value": ""
+      },
+      "HU_STRING_SESSION": {
+        "description": "get this value from @BotFather",
+        "value": ""
+      },
+      "DATABASE_URL": {
+        "description": "enter pasword or leave it public",
+        "value": "",
+        "required" : false
+      }
     },
+      "LOG_CHANNEL_ID": {
+        "description": "get this value from https://my.telegram.org",
+        "value": ""
+      },      
     "stack": "container",
     "formation": {
       "worker": {
@@ -40,3 +41,4 @@
       }
     }
   }
+  
